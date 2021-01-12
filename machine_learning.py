@@ -216,5 +216,5 @@ if __name__ == '__main__':
     # print(f"Loss: {loss}")
     # print(f"Accuracy: {accuracy}")
 
-    print (make_prediction(model, "C:\\Users\\Dell\\Desktop\\poc-doc-project\\poc-doc-recognition\\dataset_raw" +
-                    "\\test\\melanoma\\ISIC_0012758.jpg"))
+    print (make_prediction(model, "C:\\Users\\User\\Desktop\\POC-DOC\\poc-doc-github\\poc-doc-recognition\\poc-doc-recognition\\dataset_raw\\test\\melanoma" +
+                    "\\ISIC_0013925.jpg"))

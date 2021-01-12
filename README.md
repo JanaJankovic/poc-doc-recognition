@@ -17,10 +17,13 @@ def locate_object(picture_path, photo_saved_location, model_path, size, predicte
 **picture_path** - string <br/>
 * should be saved in folder predict_set<br/>
 * example : 'predict_set\\img_123.jpg'<br/>
+
 **model_path** - string<br/>
 * should be just 'model'<br/>
+
 **size** - int<br/>
 * should be size of model we trained, 128<br/>
+
 **predicted_save_location** - string<br/>
 * folder name of place for saving picture, should be predicted_set, or anything from where you will read it and send back to android</br>
 

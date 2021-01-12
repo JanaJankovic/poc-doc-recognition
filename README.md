@@ -11,7 +11,9 @@ How to install model :
 4. run machine_learning.py<br/>
 
 How to use local_operators.py :<br/>
-locate_object(picture_path, photo_saved_location, model_path, size, predicted_save_location)<br/>
+```python
+def locate_object(picture_path, photo_saved_location, model_path, size, predicted_save_location)
+```
 </br>
 picture_path - string <br/>
 * should be saved in folder predict_set<br/>

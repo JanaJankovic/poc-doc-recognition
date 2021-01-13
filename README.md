@@ -39,6 +39,8 @@ Example call :
 locate_object('dataset_size128\\train\\nevus\\ISIC_0012680.jpg', "predict_set", "model", 128, "predicted_set")
 ```
 ## Result
-
-
+**Input**<br/>
+![Input](https://github.com/JanaJankovic/poc-doc-recognition/blob/master/screenshots/Screenshot_1.jpg)
+**Output**<br/>
+![Output](https://github.com/JanaJankovic/poc-doc-recognition/blob/master/screenshots/Screenshot_2.jpg)
 

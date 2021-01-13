@@ -1,8 +1,11 @@
 # poc-doc-recognition
+
 Dataset : https://www.kaggle.com/wanderdust/skin-lesion-analysis-toward-melanoma-detection<br/>
 Nevus -> Birthmark<br/>
 Melanoma -> Skin cancer<br/>
 Seborrheic keratosis -> Common noncancerous skin growth<br/>
+
+## Model installation 
 
 How to install model :
 1. extract dataset and rename it to dataset_raw<br/>
@@ -10,7 +13,7 @@ How to install model :
 3. run preprocessing<br/>
 4. run machine_learning.py<br/>
 
-How to use local_operators.py :<br/>
+## How to use local_operators.py
 ```python
 def locate_object(picture_path, photo_saved_location, model_path, size, predicted_save_location)
 ```
@@ -35,6 +38,7 @@ Example call :
 ```python
 locate_object('dataset_size128\\train\\nevus\\ISIC_0012680.jpg', "predict_set", "model", 128, "predicted_set")
 ```
+## Result
 
 
 

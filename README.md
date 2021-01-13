@@ -14,9 +14,13 @@ How to use local_operators.py :<br/>
 ```python
 def locate_object(picture_path, photo_saved_location, model_path, size, predicted_save_location)
 ```
+**Return value** - path to where end result picture is saved and string category<br/>
+
 **picture_path** - string <br/>
+* example : 'server_side_pics\\img_123.jpg'<br/>
+
+**photo_saved_location** - string<br/>
 * should be saved in folder predict_set<br/>
-* example : 'predict_set\\img_123.jpg'<br/>
 
 **model_path** - string<br/>
 * should be just 'model'<br/>

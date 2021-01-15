@@ -1,3 +1,11 @@
+# PYTHON HTTP SERVER
+What to do to make it running
+1. pull file py_server.py from git to recognition folder (put it along with other python scripts)<br/>
+2. create folders: <b>images</b> and <b>images_res</b><br/>
+3. in recognition folder, open command prompt and run command: python py_server.py<br/>
+4. Test if everything works in Postman: send <b>POST</b> request to URL: <b>http://<your_local_ip_address>:9090/poc-doc/recognise  , in request <b>body</b> click on radio button value <b>form-data</b> and add new entry: key = <b>image</b> (change from type Text to <b>File</b> , Value = <b>select any .jpg image from your computer you want to upload</b><br/>
+5. Is everything works, response should give you JSON with 3 key-value pairs: status (true), imageBytes and category
+
 # poc-doc-recognition
 
 Dataset : https://www.kaggle.com/wanderdust/skin-lesion-analysis-toward-melanoma-detection<br/>

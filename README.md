@@ -4,7 +4,7 @@ What to do to make it running
 2. create folders: <b>images</b> and <b>images_res</b><br/>
 3. in script <b>local_operators.py</b> <b>comment every pyplot show and every unnecessary print (like print(category) )</b>
 3. in recognition folder, open <b>command prompt</b> and run command: <b>python py_server.py</b><br/>
-4. Test if everything works in Postman: send <b>POST</b> request to URL: <b>http://<your_local_ip_address>:9090/poc-doc/recognise  , in request <b>body</b> click on radio button value <b>form-data</b> and add new entry: key = <b>image</b> (change from type Text to <b>File</b> , Value = <b>select any .jpg image from your computer you want to upload</b><br/>
+4. Test if everything works in Postman: send <b>POST</b> request to URL: <b>http://<your_local_ip_address>:9090/poc-doc/recognise</b>  , in request <b>body</b> click on radio button value <b>form-data</b> and add new entry: key = <b>image</b> (change from type Text to <b>File</b> , Value = <b>select any .jpg image from your computer you want to upload</b><br/>
 5. Is everything works, response should give you JSON with 3 key-value pairs: status (true), imageBytes and category
 
 # poc-doc-recognition

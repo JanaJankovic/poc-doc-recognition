@@ -221,5 +221,5 @@ def locate_object(picture_path, photo_saved_location, model_path, size, predicte
     cv2.imwrite(os.path.join(predicted_save_location, filename), temp_img)
     return os.path.join(predicted_save_location, filename), category
 
-
-locate_object('dataset_size128\\train\\nevus\\ISIC_0012680.jpg', "predict_set", "model", 128, "predicted_set")
+if __name__ == '__main__':
+    locate_object('dataset_size128\\train\\nevus\\ISIC_0012680.jpg', "predict_set", "model", 128, "predicted_set")

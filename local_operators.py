@@ -72,7 +72,7 @@ def locate_object(picture_path, photo_saved_location, model_path, size, predicte
     binary_img = cv2.adaptiveThreshold(gray_img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
                                        cv2.THRESH_BINARY_INV, 131, 15)
     # plotImg(img)
-    plotImg(image)
+    # plotImg(image)   =============================================================================<<<<<<<<<<<<<<<
     # plotImg(binary_img)
     _, _, boxes, _ = cv2.connectedComponentsWithStats(binary_img)
 
@@ -188,8 +188,8 @@ def locate_object(picture_path, photo_saved_location, model_path, size, predicte
 
 
     ## final result without nametag
-    plotImg(cv2.rectangle(image, (x-3,y-8), (x+w+3,y+h+3), (0,255,0), 1)) #this one
-    temp_img = cv2.rectangle(image, (x-3,y-8), (x+w+3,y+h+3), (0,255,0), 1).copy()
+    # plotImg(cv2.rectangle(image, (x-3,y-8), (x+w+3,y+h+3), (198, 201, 95), 1)) #this one =============================================================================<<<<<<<<<<<<<<<
+    temp_img = cv2.rectangle(image, (x-3,y-8), (x+w+3,y+h+3), (198, 201, 95), 1).copy()
     # cv2.rectangle(image, (x-3,y-8), (x+w+3,y+h+3), (0,255,0), 1)
     # plt.imshow(image)
     # plt.show()
@@ -201,25 +201,32 @@ def locate_object(picture_path, photo_saved_location, model_path, size, predicte
     cv2.imwrite(os.path.join(photo_saved_location, filename), image)
 
     model = machine_learning.load_model(model_path + "\\model_" + str(size) + ".model")
-    category_index =  machine_learning.make_prediction(model, os.path.join(photo_saved_location, filename))
+    category_index =  machine_learning.make_prediction(model, picture_path)
 
     category = machine_learning.categories[category_index]
     print(category)
 
     ##print final result
     font_size = 0.4
+    text_result = ""
     if category=="seborrheic_keratosis":
         font_size = 0.24
+        text_result = "Seborrheic keratosis"
+    elif category=="nevus":
+        text_result = "Nevus"
+    elif category=="melanoma":
+        text_result = "Melanoma"
+
 
     font = cv2.FONT_ITALIC
-    cv2.putText(temp_img, category, (x - 4, y - 10), font, font_size, (0, 0, 0), 1, cv2.LINE_AA)
-    plotImg(temp_img)
+    cv2.putText(temp_img, text_result, (x - 4, y - 10), font, font_size, (0, 0, 0), 1, cv2.LINE_AA)
+    # plotImg(temp_img) =============================================================================<<<<<<<<<<<<<<<
 
     if not os.path.isdir(predicted_save_location):
         os.mkdir(predicted_save_location)
 
     cv2.imwrite(os.path.join(predicted_save_location, filename), temp_img)
-    return os.path.join(predicted_save_location, filename), category
+    return os.path.join(predicted_save_location, filename), text_result
 
 if __name__ == '__main__':
     locate_object('dataset_size128\\train\\nevus\\ISIC_0012680.jpg', "predict_set", "model", 128, "predicted_set")

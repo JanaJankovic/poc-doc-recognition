@@ -72,7 +72,7 @@ def locate_object(picture_path, photo_saved_location, model_path, size, predicte
     binary_img = cv2.adaptiveThreshold(gray_img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
                                        cv2.THRESH_BINARY_INV, 131, 15)
     # plotImg(img)
-    plotImg(image)
+    # plotImg(image)   =============================================================================<<<<<<<<<<<<<<<
     # plotImg(binary_img)
     _, _, boxes, _ = cv2.connectedComponentsWithStats(binary_img)
 
@@ -188,7 +188,7 @@ def locate_object(picture_path, photo_saved_location, model_path, size, predicte
 
 
     ## final result without nametag
-    plotImg(cv2.rectangle(image, (x-3,y-8), (x+w+3,y+h+3), (198, 201, 95), 1)) #this one
+    # plotImg(cv2.rectangle(image, (x-3,y-8), (x+w+3,y+h+3), (198, 201, 95), 1)) #this one =============================================================================<<<<<<<<<<<<<<<
     temp_img = cv2.rectangle(image, (x-3,y-8), (x+w+3,y+h+3), (198, 201, 95), 1).copy()
     # cv2.rectangle(image, (x-3,y-8), (x+w+3,y+h+3), (0,255,0), 1)
     # plt.imshow(image)
@@ -220,7 +220,7 @@ def locate_object(picture_path, photo_saved_location, model_path, size, predicte
 
     font = cv2.FONT_ITALIC
     cv2.putText(temp_img, text_result, (x - 4, y - 10), font, font_size, (0, 0, 0), 1, cv2.LINE_AA)
-    plotImg(temp_img)
+    # plotImg(temp_img) =============================================================================<<<<<<<<<<<<<<<
 
     if not os.path.isdir(predicted_save_location):
         os.mkdir(predicted_save_location)

@@ -12,7 +12,6 @@ import json
 import base64
 from base64 import encodebytes
 from PIL import Image
-
 #import SimpleHTTPServer
 
 PORT = 9090
@@ -85,7 +84,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
 		
 		if ctype == 'multipart/form-data':
 			form = cgi.FieldStorage( fp=self.rfile, headers=self.headers, environ={'REQUEST_METHOD':'POST', 'CONTENT_TYPE':self.headers['Content-Type'], })
-			
+			print("input: ", form[FORM_KEY])
 			try:
 				#if isinstance(form[FORM_KEY], list):
 				#	for record in form[FORM_KEY]:
@@ -98,7 +97,8 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
 				SAVE_RESULT_PATH = "images_res"
 				
 				open(FULL_NAME, "wb").write(form[FORM_KEY].file.read())
-				
+				#open(FULL_NAME, "wb").write(io.BytesIO(base64.b64decode(form[FORM_KEY])))
+
 				RES_PATH, RES_CATEGORY = local_operators.locate_object(FULL_NAME, "predict_set", "model", 128, SAVE_RESULT_PATH)
 				STATUS = True
 				

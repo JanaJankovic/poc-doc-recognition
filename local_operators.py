@@ -228,7 +228,7 @@ def locate_object(picture_path, photo_saved_location, model_path, size, predicte
 
     font = cv2.FONT_ITALIC
     cv2.putText(temp_img, text_result, (x - 4, y - 10), font, font_size, (0, 0, 0), 1, cv2.LINE_AA)
-    plotImg(temp_img) #=============================================================================<<<<<<<<<<<<<<<
+    # plotImg(temp_img) #=============================================================================<<<<<<<<<<<<<<<
 
     if not os.path.isdir(predicted_save_location):
         os.mkdir(predicted_save_location)

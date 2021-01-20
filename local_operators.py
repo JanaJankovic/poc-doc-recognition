@@ -11,6 +11,7 @@ from PIL import Image
 
 filepath = 'predict_set'
 modelpath = 'model'
+size = 128
 
 def find_histogram(clt):
     """
@@ -55,6 +56,12 @@ def plotImg(img):
 def locate_object(picture_path, photo_saved_location, model_path, size, predicted_save_location):
     img = cv2.imread(picture_path)
 
+    # plotImg(img)
+    # resizing the image
+    img = cv2.resize(img, (size, size), interpolation=cv2.INTER_AREA)
+
+    # plotImg(img)
+
     if not os.path.isdir(photo_saved_location):
         os.mkdir(photo_saved_location)
 
@@ -72,7 +79,8 @@ def locate_object(picture_path, photo_saved_location, model_path, size, predicte
     binary_img = cv2.adaptiveThreshold(gray_img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
                                        cv2.THRESH_BINARY_INV, 131, 15)
     # plotImg(img)
-    # plotImg(image)
+    # plotImg(image)   =============================================================================<<<<<<<<<<<<<<<
+    # plotImg(gray_img)
     # plotImg(binary_img)
     _, _, boxes, _ = cv2.connectedComponentsWithStats(binary_img)
 
@@ -188,7 +196,7 @@ def locate_object(picture_path, photo_saved_location, model_path, size, predicte
 
 
     ## final result without nametag
-    # plotImg(cv2.rectangle(image, (x-3,y-8), (x+w+3,y+h+3), (198, 201, 95), 1)) #this one
+    # plotImg(cv2.rectangle(image, (x-3,y-8), (x+w+3,y+h+3), (198, 201, 95), 1)) #this one =============================================================================<<<<<<<<<<<<<<<
     temp_img = cv2.rectangle(image, (x-3,y-8), (x+w+3,y+h+3), (198, 201, 95), 1).copy()
     # cv2.rectangle(image, (x-3,y-8), (x+w+3,y+h+3), (0,255,0), 1)
     # plt.imshow(image)
@@ -220,7 +228,7 @@ def locate_object(picture_path, photo_saved_location, model_path, size, predicte
 
     font = cv2.FONT_ITALIC
     cv2.putText(temp_img, text_result, (x - 4, y - 10), font, font_size, (0, 0, 0), 1, cv2.LINE_AA)
-    # plotImg(temp_img)
+    # plotImg(temp_img) #=============================================================================<<<<<<<<<<<<<<<
 
     if not os.path.isdir(predicted_save_location):
         os.mkdir(predicted_save_location)
@@ -228,5 +236,6 @@ def locate_object(picture_path, photo_saved_location, model_path, size, predicte
     cv2.imwrite(os.path.join(predicted_save_location, filename), temp_img)
     return os.path.join(predicted_save_location, filename), text_result
 
-if __name__ == '__main__':
-    locate_object('dataset_size128\\train\\nevus\\ISIC_0012680.jpg', "predict_set", "model", 128, "predicted_set")
+
+locate_object('dataset_raw\\train\\nevus\\ISIC_0013792.jpg', "predict_set", "model", 128, "predicted_set")
+# 'dataset_size128\\train\\nevus\\ISIC_0013792.jpg'

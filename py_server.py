@@ -84,7 +84,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
 		
 		if ctype == 'multipart/form-data':
 			form = cgi.FieldStorage( fp=self.rfile, headers=self.headers, environ={'REQUEST_METHOD':'POST', 'CONTENT_TYPE':self.headers['Content-Type'], })
-			print("input: ", form[FORM_KEY])
+			# print("input: ", form[FORM_KEY])
 			try:
 				#if isinstance(form[FORM_KEY], list):
 				#	for record in form[FORM_KEY]:

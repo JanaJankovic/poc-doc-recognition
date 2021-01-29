@@ -17,10 +17,11 @@ Seborrheic keratosis -> Common noncancerous skin growth
 ## General info
 Pocket Doctor is an app intented to simulate the usage of blockchain in a healthcare system. It was developed as a student project with a potential to grow. So far it consists out of 6 repositories :
 * [Android](https://github.com/JanaJankovic/poc-doc-android)
-* Blockchain
-* Backend
-* Frontend
+* [Blockchain](https://github.com/PetrovicGoran/blchain-hopefully-working)
+* [Backend](https://github.com/PetrovicGoran/poc-doc-backend)
+* [Frontend](https://github.com/PetrovicGoran/poc-doc-frontend)
 * [Arduino](https://github.com/JanaJankovic/poc-doc-arduino)
+* [Recognition](https://github.com/JanaJankovic/poc-doc-recognition)
 * Recognition (this once)
 
 You can see whole presention [here](https://univerzamb-my.sharepoint.com/:p:/g/personal/jana_jankovic_student_um_si/ETQo1_cbyKlDnSKktxM6_YABnMsRZP8nEeGqBBbXq_wHtg?e=2ceRYw)

@@ -1,4 +1,42 @@
-# PYTHON HTTP SERVER
+# Pocket-Doctor Recognition
+> This repository is intented for analysis of moles/skin cancer and seborrheic keratosis.</br> 
+Nevus -> Birthmark<br/>
+Melanoma -> Skin cancer<br/>
+Seborrheic keratosis -> Common noncancerous skin growth
+
+## Table of contents
+* [General info](#general-info)
+* [Screenshots](#screenshots)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Features](#features)
+* [Status](#status)
+* [Inspiration](#inspiration)
+* [Contact](#contact)
+
+## General info
+Pocket Doctor is an app intented to simulate the usage of blockchain in a healthcare system. It was developed as a student project with a potential to grow. So far it consists out of 6 repositories :
+* [Android](https://github.com/JanaJankovic/poc-doc-android)
+* Blockchain
+* Backend
+* Frontend
+* [Arduino](https://github.com/JanaJankovic/poc-doc-arduino)
+* Recognition (this once)
+
+You can see whole presention [here](https://univerzamb-my.sharepoint.com/:p:/g/personal/jana_jankovic_student_um_si/ETQo1_cbyKlDnSKktxM6_YABnMsRZP8nEeGqBBbXq_wHtg?e=2ceRYw)
+
+## Screenshots
+### Input
+![Input](https://github.com/JanaJankovic/poc-doc-recognition/blob/master/screenshots/Screenshot_1.jpg)
+### Output
+![Output](https://github.com/JanaJankovic/poc-doc-recognition/blob/master/screenshots/Screenshot_2.jpg)
+
+## Technologies
+* Python 
+* TensorFlow 
+
+## Setup
+### Python http server
 What to do to make it running
 1. pull file <b>py_server.py</b> from git to recognition folder (put it along with other python scripts)<br/>
 2. create folders: <b>images</b> and <b>images_res</b><br/>
@@ -7,14 +45,8 @@ What to do to make it running
 4. Test if everything works in Postman: send <b>POST</b> request to URL: <b>http://<your_local_ip_address>:9090/poc-doc/recognise</b>  , in request <b>body</b> click on radio button value <b>form-data</b> and add new entry: key = <b>image</b> (change from type Text to <b>File</b> , Value = <b>select any .jpg image from your computer you want to upload</b><br/>
 5. Is everything works, response should give you JSON with 3 key-value pairs: status (true), imageBytes and category
 
-# poc-doc-recognition
-
+### Model installation 
 Dataset : https://www.kaggle.com/wanderdust/skin-lesion-analysis-toward-melanoma-detection<br/>
-Nevus -> Birthmark<br/>
-Melanoma -> Skin cancer<br/>
-Seborrheic keratosis -> Common noncancerous skin growth<br/>
-
-## Model installation 
 
 How to install model :
 1. extract dataset and rename it to dataset_raw<br/>
@@ -47,9 +79,28 @@ Example call :
 ```python
 locate_object('dataset_size128\\train\\nevus\\ISIC_0012680.jpg', "predict_set", "model", 128, "predicted_set")
 ```
-## Result
-### Input
-![Input](https://github.com/JanaJankovic/poc-doc-recognition/blob/master/screenshots/Screenshot_1.jpg)
-### Output
-![Output](https://github.com/JanaJankovic/poc-doc-recognition/blob/master/screenshots/Screenshot_2.jpg)
 
+## Features
+List of features ready and TODOs for future development
+* Analysis of input picture
+* Creating result picture
+* Sending result picture from server to client
+
+## Status
+Project is: _finished_
+Purpose of this project is to analyze input photo and give output.
+
+## Inspiration
+Project is supported by [The Faculty of Electrical Engineering and Computer Science](https://feri.um.si/) and [University of Maribor](https://www.um.si/Strani/default.aspx).
+
+## Contact
+Created by [Jana Jankovic](https://github.com/JanaJankovic) - feel free to contact me on one of the emails :
+* jana.jankovic@student.um.si
+* jana.j00@outlook.com
+* jana.jankovic.feri@gmail.com
+
+Supported by [Goran Petrovic](https://github.com/PetrovicGoran) - feel free to contact him :
+* goran.petrovic1@student.um.si
+
+Suppored by [Nikola Vilar Jordanovski](https://github.com/NikolaVilar) - feel free to contact him :
+* nikola.vialr@student.um.si
